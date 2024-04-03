@@ -28,13 +28,8 @@ Click [here](https://github.com/otaviolsantana/solvate) to visit stable reposito
 	- solvate           : Main program
 	- solvate.profile   : Script with suite definitions
 	- solvate.config    : Script to configure suite
-	- solvate/manual    : Program user manual (Quick Guide)
 	- solvate/modules   : Suite modules and sub-modules
-	- solvate/nodes     : Pré-compiled dependencies
 	- solvate/share     : Parameterized solvents and counterions
-	- solvate/suite     : Interfaced installed program links
-	- solvate/tests     : Files for program tests
-	- solvate/tutorials : Program tutorials
 
 **DEPENDENCIES**
 
