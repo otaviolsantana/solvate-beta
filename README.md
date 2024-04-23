@@ -63,4 +63,4 @@ SOLVATE is a free software: you can redistribute it under the terms of the BSD 3
 
 **CHANGELOG**
 
-	- 22/04/2024 : Inclusion of treatment of two-phase systems.
+	- 22/04/2024 : Beginning of the implementation of the treatment of two-phase systems (under construction).
