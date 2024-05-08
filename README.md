@@ -23,44 +23,11 @@ Click [here](https://github.com/otaviolsantana/solvate) to visit stable reposito
 
 	   cd solvate && chmod +x solvate.config && ./solvate.config
  
-**CONTENTS**
+**CHANGELOG**
 
-	- solvate           : Main program
-	- solvate.profile   : Script with suite definitions
-	- solvate.config    : Script to configure suite
-	- solvate/modules   : Suite modules and sub-modules
-	- solvate/share     : Parameterized solvents and counterions
-
-**DEPENDENCIES**
-
-   ***Simulation Box Creation***
-
-     - PackMol v20.14.2
-     - Q-Force v1.0
-
-   ***Electronic Structure and Molecular Dynamics Simulation Programs***
-
-     - xTB v6.6.1
-     - CREST v2.12
-     - ORCA 5.0
-     - GROMACS 2023.3
-
-   ***Visualization Programs***
-
-     - JMol
-     - VMD
-
-   ***Scripts Interpreter and Libraries***
-
-     - Python 3.10
-     - MatPlotLib 3.5
-     - Tqdm 4.65
-     - PyQt5 5.15
+	- Implementation of the treatment of two-phase systems (under construction).
+	- Integration of the MICRO, GCALC, and ONIOM modules to automate the microsolvation procedure.
 
 **LICENSE**
 
 SOLVATE is a free software: you can redistribute it under the terms of the BSD 3-Clause License. This software is provided by the copyright holders and contributors “as is”, and any express or implied warranties, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose, are disclaimed. In no event shall the copyright holder or contributors be liable for any direct, indirect, incidental, special, exemplary, or consequential damages (including, but not limited to, procurement of substitute goods or services; loss of use, data, or profits; or business interruption) however caused and on any theory of liability, whether in contract, strict liability, or tort (including negligence or otherwise) arising in any way out of the use of this software, even if advised of the possibility of such damage.
-
-**CHANGELOG**
-
-	- 22/04/2024 : Beginning of the implementation of the treatment of two-phase systems (under construction).
