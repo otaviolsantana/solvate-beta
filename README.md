@@ -27,6 +27,7 @@ Click [here](https://github.com/otaviolsantana/solvate) to visit stable reposito
 
 	- Integration of the MICRO, GCALC, and ONIOM modules to automate the microsolvation procedure.
 	- Implementation of the treatment for two-phase systems (under development).
+	- Automation of molecular dynamics equilibration steps (under development).
 
 **LICENSE**
 
