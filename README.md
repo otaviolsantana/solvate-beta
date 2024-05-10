@@ -17,7 +17,7 @@ Click [here](https://github.com/otaviolsantana/solvate) to visit stable reposito
 
    	or
 
-   	   wget https://github.com/otaviolsantana/solvate-beta/archive/refs/heads/main.zip ; unzip main.zip
+   	   wget https://github.com/otaviolsantana/solvate-beta/archive/refs/heads/main.zip ; unzip main.zip ; mv -f solvate-beta-main solvate
 
  	Then, adjust the “profile” and “config” files, and run the “solvate.config” script:
 
