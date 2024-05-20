@@ -197,8 +197,8 @@ fi
 # Setting execution parameters
 
 TPQUEUE="" # Default values
-CNTASKS="4"
-CFGMEMO="8"
+CNTASKS="16"
+CFGMEMO="32"
 CFGSAVE="NO"
 CFGDEBG="NO"
 while [ "$1" != "" ]; do
