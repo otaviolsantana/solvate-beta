@@ -121,7 +121,7 @@ MAXPROC=$((NUMMACS*MAXCPUS))
 if [[ `free -m | grep -ia "Mem" | head -n1 | awk '{print $2}'` != "" ]]; then
    MAXMEMO=$(echo "`free -m | grep -ia "Mem" | head -n1 | awk '{print $2}'` / 1000" | bc)
 else
-   MAXMEMO="8"
+   MAXMEMO="32"
 fi
 
 # Determining the type of job execution
