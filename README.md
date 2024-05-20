@@ -29,7 +29,7 @@ Click [here](https://github.com/otaviolsantana/solvate) to visit stable reposito
 	- Addition of SAC and SOC optimization procedures in the treatment of microsolvation.
 	- Implementation of the search for similarities in the SOC procedure.
  	- Data extraction from SUMMY and SUPPY modules with concentration and temperature correction.
-  	- Extraction of clusters by the MICRO module with reorientation of structures relative to the solute.
+  	- Microssolvation clusters extraction with reorientation of structures relative to the solute.
    	- Minimizing structural RMSD from files with multiple structures (trj.xyz).
 	- Implementation of the treatment for two-phase systems (under development).
 	- Automation of molecular dynamics equilibration steps (under development).
