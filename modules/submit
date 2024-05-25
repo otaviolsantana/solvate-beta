@@ -185,13 +185,13 @@ if [[ $JOBTYPE = "SCRIPT" ]]; then
    PRGSJOB=$JOBNAME".jobout"
    PROGEXE=$PWD/$1
    INPNAME=""
-   WORKCFG="-local"
+   WORKCFG=""
 else
    JOBNAME=`echo $2 | awk -F"." '{print $1}'` # `echo $2 | sed -E 's/\.(gjf|com|inp|xyz|gro|pdb|...|log)//'`
    PRGSJOB=$JOBNAME".jobout"                  # PRGSJOB=$JOBNAME".job"$PROGEXE
    PROGEXE=$1
    INPNAME=$2
-   WORKCFG=`echo $@ | sed "s/$PROGEXE//g" | sed "s/$INPNAME//g"`' '"-local" # | sed s/\-preserve/\/`
+   WORKCFG=`echo $@ | sed "s/$PROGEXE//g" | sed "s/$INPNAME//g"` # | sed s/\-preserve/\/`
 fi
 
 # Setting execution parameters
@@ -251,7 +251,7 @@ EXEC_SLM() # 1: SLURM System
    clear
 
  # - CONFIGURATION ---------------------------------------------------------------------------------
-   WORKCFG=$WORKCFG' -prc '$CNTASKS' -mem '$CFGMEMO
+   WORKCFG=$WORKCFG' -prc '$CNTASKS' -mem '$CFGMEMO' -local'
  # -------------------------------------------------------------------------------------------------
 
    echo '#!/bin/bash'                                          > $JOBNAME.job
@@ -326,7 +326,7 @@ EXEC_PBS() # 2: Torque/PBS (Portable Batch System)
       echo ; echo "ERROR: Queue not definied" ; echo ; exit
    fi
  # - CONFIGURATION ---------------------------------------------------------------------------------
-    WORKCFG=$WORKCFG' -prc '$CNTASKS' -mem '$CFGMEMO
+    WORKCFG=$WORKCFG' -prc '$CNTASKS' -mem '$CFGMEMO' -local'
  # -------------------------------------------------------------------------------------------------
  
    echo "#!/usr/bin/bash"                                      > $JOBNAME.job
@@ -361,6 +361,12 @@ EXEC_PBS() # 2: Torque/PBS (Portable Batch System)
 
 EXEC_SGE() # 3: Grid Engine (SGE)
 {
+   clear
+
+ # - CONFIGURATION ---------------------------------------------------------------------------------
+   WORKCFG=$WORKCFG' -prc '$CNTASKS' -mem '$CFGMEMO' -local'
+ # -------------------------------------------------------------------------------------------------
+
    echo "#!/bin/bash                                           "   > $JOBNAME.job
    echo "#$ -pe parallel_environment $CNTASKS                  "  >> $JOBNAME.job
    echo "#$ -q queue_name $TPQUEUE                             "  >> $JOBNAME.job
@@ -378,6 +384,12 @@ EXEC_SGE() # 3: Grid Engine (SGE)
 
 EXEC_LSF() # 4: LSF (Load Sharing Facility)
 {
+   clear
+
+ # - CONFIGURATION ---------------------------------------------------------------------------------
+   WORKCFG=$WORKCFG' -prc '$CNTASKS' -mem '$CFGMEMO' -local'
+ # -------------------------------------------------------------------------------------------------
+
    echo "#!/bin/bash                                        "   > $JOBNAME.job
    echo "#BSUB -n $CNTASKS                                  "  >> $JOBNAME.job
    echo "#BSUB -q $TPQUEUE                                  "  >> $JOBNAME.job
@@ -395,6 +407,12 @@ EXEC_LSF() # 4: LSF (Load Sharing Facility)
 
 EXEC_HTC() # 5: HTCondor System
 {
+   clear
+
+ # - CONFIGURATION ---------------------------------------------------------------------------------
+   WORKCFG=$WORKCFG' -prc '$CNTASKS' -mem '$CFGMEMO' -local'
+ # -------------------------------------------------------------------------------------------------
+
    echo "#!/bin/bash                                        "   > $JOBNAME.job
    echo "#BSUB -n $CNTASKS                                  "  >> $JOBNAME.job
    echo "#BSUB -q $TPQUEUE                                  "  >> $JOBNAME.job
@@ -412,6 +430,9 @@ EXEC_HTC() # 5: HTCondor System
 
 EXEC_LOC() # ?: Local Machine
 {
+ # - CONFIGURATION ---------------------------------------------------------------------------------
+   WORKCFG=$WORKCFG' -prc '$CNTASKS' -mem '$CFGMEMO' -local'
+ # -------------------------------------------------------------------------------------------------
    $PROGEXE $INPNAME $WORKCFG &
 }
 
