@@ -185,7 +185,7 @@ if [[ $JOBTYPE = "SCRIPT" ]]; then
    PRGSJOB=$JOBNAME".jobout"
    PROGEXE=$PWD/$1
    INPNAME=""
-   WORKCFG=""
+   WORKCFG=`echo $@ | sed "s/$1//g"` # | sed "s/$INPNAME//g" | sed s/\-preserve/\/`
 else
    JOBNAME=`echo $2 | awk -F"." '{print $1}'` # `echo $2 | sed -E 's/\.(gjf|com|inp|xyz|gro|pdb|...|log)//'`
    PRGSJOB=$JOBNAME".jobout"                  # PRGSJOB=$JOBNAME".job"$PROGEXE
