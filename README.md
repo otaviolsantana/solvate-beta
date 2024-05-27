@@ -13,11 +13,11 @@ Click [here](https://github.com/otaviolsantana/solvate) to visit stable reposito
 	The suite is distributed pre-compiled for Linux systems, being only necessary to configure it.
 	To do this, download the program with the command:
  
-	   git clone https://github.com/otaviolsantana/solvate-beta.git
+   	   wget https://github.com/otaviolsantana/solvate-beta/archive/refs/heads/main.zip ; unzip main.zip ; mv -f solvate-beta-main solvate
 
    	or
 
-   	   wget https://github.com/otaviolsantana/solvate-beta/archive/refs/heads/main.zip ; unzip main.zip ; mv -f solvate-beta-main solvate
+	   git clone https://github.com/otaviolsantana/solvate-beta.git
 
  	Then, adjust the “profile” and “config” files, and run the “solvate.config” script:
 
