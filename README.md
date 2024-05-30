@@ -25,7 +25,7 @@ Click [here](https://github.com/otaviolsantana/solvate) to visit stable reposito
  
 **CHANGELOG**
 
-	- Inclusion of parameters for simulation configuration via MDPAR submodule.
+	- Inclusion of parameters for simulation configuration through the MDPAR submodule.
 	- Expansion of the list of parameterized solvents via SOLVS submodule.
 	- Integration of the MICRO, GCALC, and ONIOM modules to automate the microsolvation procedure.
 	- Addition of SAC and SOC optimization procedures in the treatment of microsolvation.
