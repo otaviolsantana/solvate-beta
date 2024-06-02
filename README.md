@@ -36,6 +36,7 @@ Click [here](https://github.com/otaviolsantana/solvate) to visit stable reposito
   	- Microssolvation clusters extraction with reorientation of structures relative to the solute.
 	- Implementation of the treatment for two-phase systems (under development).
 	- Automation of molecular dynamics equilibration steps (under development).
+ 	- Bug fixes...
 
 **LICENSE**
 
