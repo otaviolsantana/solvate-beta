@@ -22,15 +22,7 @@ Click [here](https://github.com/otaviolsantana/solvate) to visit stable reposito
  
 **CHANGELOG**
 
-	- Inclusion of parameters for simulation configuration through the MDPAR submodule.
-	- Expansion of the list of parameterized solvents via SOLVS submodule.
-	- Integration of the MICRO, GCALC, and ONIOM modules to automate the microsolvation procedure.
-	- Addition of SAC and SOC optimization procedures in the treatment of microsolvation.
-	- Implementation of the search for similarities in the SOC procedure.
- 	- RMSD cutoff estimate for the SOC procedure via the RMSDE submodule.
- 	- Data extraction from SUMMY and SUPPY modules with concentration and temperature correction.
-   	- Minimization of structural RMSD from files with multiple structures (trj.xyz).
-  	- Microssolvation clusters extraction with reorientation of structures relative to the solute.
+	- Integration of the MICRO, GCALC, and ONIOM modules via MSRUN submodule.
 	- Implementation of the treatment for two-phase systems (under development).
 	- Automation of molecular dynamics equilibration steps (under development).
 	- Inclusion of EBIND module to calculate the free energy of protein-inhibitor interaction (under development).
