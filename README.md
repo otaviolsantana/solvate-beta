@@ -33,7 +33,7 @@ Click [here](https://github.com/otaviolsantana/solvate) to visit stable reposito
   	- Microssolvation clusters extraction with reorientation of structures relative to the solute.
 	- Implementation of the treatment for two-phase systems (under development).
 	- Automation of molecular dynamics equilibration steps (under development).
-	- Include the EBIND module to calculate the free energy of protein-inhibitor interaction (under development).
+	- Inclusion of EBIND module to calculate the free energy of protein-inhibitor interaction (under development).
  	- Bug fixes...
 
 **CITATION**
