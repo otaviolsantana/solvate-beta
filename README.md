@@ -6,7 +6,7 @@
 
 **STABLE REPOSITORY**
 
-Click [here](https://github.com/otaviolsantana/solvate) to visit stable repository or [here](https://github.com/OLSantanaProjects/SolvateSuite) to visit project repository (under construction).
+Click [here](https://github.com/otaviolsantana/solvate) to visit stable repository or [here](https://github.com/OLSantanaProjects/SolvateSuite) to visit the _Solvate Suite Project_ repository (under construction).
 
 **INSTALLATION**
 
