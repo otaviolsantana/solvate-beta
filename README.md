@@ -14,7 +14,7 @@ The release version can be found [here](https://github.com/otaviolsantana/solvat
 	To do this, download the program with the command:
  
 	   wget https://github.com/otaviolsantana/solvate-beta/archive/refs/heads/main.zip
-           unzip main.zip && mv -f solvate-main solvate
+	   unzip main.zip && mv -f solvate-main solvate
 
  	Then, adjust the “profile” and “config” files, and run the “solvate.config” script:
 
