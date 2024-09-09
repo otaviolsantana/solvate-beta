@@ -4,6 +4,10 @@
 
 # _**Solvate Suite**_
 
+**RELEASE VERSION**
+
+The release version can be found [here](https://github.com/otaviolsantana/solvate/tree/main).
+
 **INSTALLATION**
 
 	The suite is distributed pre-compiled for Linux systems, being only necessary to configure it.
