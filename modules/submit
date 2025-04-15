@@ -30,7 +30,7 @@ fi
 
 # Showing the program help
 
-if [[ `echo $1 | grep -ia "\-ver"` != "" ]]; then
+if [[ `echo $1 | grep -ian "\-ver"` ]]; then
 
    infov "SUBMIT :: Sub-Module"
    exit
