@@ -5,12 +5,12 @@
 
 # Determining system batch
 
-TEST_SLUR=`echo $(which sbatch)`     # SLURM System
-TEST_PBSS=`echo $(which qsub)`       # Torque/PBS (Portable Batch System)
-TEST_SGES=`echo $(which sge_submit)` # Grid Engine (SGE)
-TEST_LSFS=`echo $(which bsub)`       # LSF (Load Sharing Facility)
-TEST_HTCO=`echo $(which bsubmit)`    # HTCondor System
-TEST_LLSB=`echo $(which llsubmit)`   # IBM Batch System
+TEST_SLUR=`echo $(command -v sbatch)`     # SLURM System
+TEST_PBSS=`echo $(command -v qsub)`       # Torque/PBS (Portable Batch System)
+TEST_SGES=`echo $(command -v sge_submit)` # Grid Engine (SGE)
+TEST_LSFS=`echo $(command -v bsub)`       # LSF (Load Sharing Facility)
+TEST_HTCO=`echo $(command -v bsubmit)`    # HTCondor System
+TEST_LLSB=`echo $(command -v llsubmit)`   # IBM Batch System
 
 if [[ `echo $TEST_SLUR`   != "" ]]; then # SLURM System
    MACHINE="SLM" && BATDESC="Slurm System [sbatch]"
@@ -145,7 +145,7 @@ if [[ $JOBTYPE = "SCRIPT" ]]; then
       exit
    fi
 else
-   if [[ `echo $(which $1)` = "" ]]; then
+   if [[ `echo $(command -v $1)` = "" ]]; then
       echo
       echo " -------------------------------"
       echo "  Prog.: "$1
