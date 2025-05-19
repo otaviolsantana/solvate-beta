@@ -42,6 +42,7 @@ alias   msolv=$(which solvate);    alias microsolv=$(which solvate); alias micro
 #--------------------------------# #------------------------------#  #-------------------------------------#
 #lias   babel="runbabel"
 #--------------------------------#
+alias   gconf="queue"
 alias   optim="oniom"
 alias      sv="sview"
 #--------------------------------#
