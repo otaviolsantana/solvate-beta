@@ -182,7 +182,7 @@ fi
 # Setting environment variables
 
 if [[ $JOBTYPE = "SCRIPT" ]]; then
-   JOBNAME=`echo $1 | awk -F"." '{print $1}'`
+   JOBNAME=$(basename $1 | sed 's/\.[^.]*$//')
    PRGSJOB=$JOBNAME".jobout"
    PROGEXE=$PWD/$1
    INPNAME=""
