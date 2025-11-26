@@ -475,7 +475,7 @@ if [[ $MACHINE != "LOC" ]]; then
    fi
    echo "    Options:" $WORKCFG
    echo "     Procs.:" $CNTASKS "(Max.:" $MAXPROC")"
-   echo "     Memory:" $CFGMEMO "(Max.:" $MAXMEMO"GB)"
+   echo "     Memory:" $CFGMEMO "(Max.:" $MAXMEMO" GB)"
    echo " ========================================================="
    echo
 
