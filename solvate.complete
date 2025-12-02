@@ -148,6 +148,7 @@ micro_complete()
    fi
 }
 
+complete -F packs_complete solvate
 complete -F packs_complete packs
 complete -F gmdff_complete gmdff
 complete -F mdrun_complete mdrun
