@@ -1,0 +1,156 @@
+#!/bin/bash
+
+packs_complete()
+{
+   local cur prev opts files
+   cur="${COMP_WORDS[COMP_CWORD]}"
+   prev="${COMP_WORDS[COMP_CWORD-1]}"
+   # Allowed extensions
+   ALLOW_EXT="com log inp out xyz xtb gro pdb"
+   # List of files
+   ALLOW_ARQ=""
+   for FILE in *; do
+      for EXT in $ALLOW_EXT; do
+         [[ "$FILE" == *.$EXT && "$FILE" != *_mol* ]] && ALLOW_ARQ="$ALLOW_ARQ $FILE"
+      done
+   done
+   # Module options
+   ALLOW_OPT="-nm -np -dc -dg -bc -cc -pr -ds -ci -sp -ft -to -rp -fm -cv -it -in -ff -bk -sv -ls -ck"
+   # Module auto-complete
+   if [[ $COMP_CWORD -eq 1 || $COMP_CWORD -eq 2 ]]; then # 1) First and second arguments → files only
+      COMPREPLY=( $(compgen -W "$ALLOW_ARQ" -- "$cur") ) ; return 0
+   elif [[ "$prev" == "-ci" ]]; then                     # 2) If the previous one was “-ci” → suggest files
+      COMPREPLY=( $(compgen -W "$ALLOW_ARQ" -- "$cur") ) ; return 0
+   elif [[ "$cur" == -* ]]; then                         # 3) If it starts with "-" → suggest options
+      COMPREPLY=( $(compgen -W "$ALLOW_OPT" -- "$cur") ) ; return 0
+   else                                                  # 4) General case → suggest files
+      COMPREPLY=( $(compgen -W "$ALLOW_OPT" -- "$cur") ) ; return 0
+   fi
+}
+
+gmdff_complete()
+{
+   local cur prev opts files
+   cur="${COMP_WORDS[COMP_CWORD]}"
+   prev="${COMP_WORDS[COMP_CWORD-1]}"
+   # Allowed extensions
+   ALLOW_EXT="com log inp out xyz xtb gro pdb"
+   # List of files
+   ALLOW_ARQ=""
+   for FILE in *; do
+      for EXT in $ALLOW_EXT; do
+         [[ "$FILE" == *.$EXT && "$FILE" != *_mol* ]] && ALLOW_ARQ="$ALLOW_ARQ $FILE"
+      done
+   done
+   # Module options
+   ALLOW_OPT="-cm -ml -sv -ck -ic -pc -mm -ff -wm -kw -ls -fm"
+   # Module auto-complete
+   if [[ $COMP_CWORD -eq 1 ]]; then                      # 1) First argument → files only
+      COMPREPLY=( $(compgen -W "$ALLOW_ARQ" -- "$cur") ) ; return 0
+   elif [[ "$cur" == -* ]]; then                         # 2) If it starts with "-" → suggest options
+      COMPREPLY=( $(compgen -W "$ALLOW_OPT" -- "$cur") ) ; return 0
+   fi
+}
+
+mdrun_complete()
+{
+   local cur prev opts files
+   cur="${COMP_WORDS[COMP_CWORD]}"
+   prev="${COMP_WORDS[COMP_CWORD-1]}"
+   # Allowed extensions
+   ALLOW_EXT="inp gro"
+   # List of files
+   ALLOW_ARQ=""
+   for FILE in *; do
+      for EXT in $ALLOW_EXT; do
+         [[ "$FILE" == *.$EXT && "$FILE" = *_mol* ]] && ALLOW_ARQ="$ALLOW_ARQ $FILE"
+      done
+   done
+   # Module options
+   ALLOW_OPT="-ra -ri -rq -rp -rb -em -bo -nv -np -pd -ms -ps -tp -br -ts -tc -tr -kp -ns -dp -dt -tt -nr -nc -np -ck -ic -cl -cp -ex -lc -pc -mm"
+   # Module auto-complete
+   if [[ $COMP_CWORD -eq 1 ]]; then                      # 1) First argument → files only
+      COMPREPLY=( $(compgen -W "$ALLOW_ARQ" -- "$cur") ) ; return 0
+   elif [[ "$cur" == -* ]]; then                         # 2) If it starts with "-" → suggest options
+      COMPREPLY=( $(compgen -W "$ALLOW_OPT" -- "$cur") ) ; return 0
+   fi
+}
+
+datas_complete()
+{
+   local cur prev opts files
+   cur="${COMP_WORDS[COMP_CWORD]}"
+   prev="${COMP_WORDS[COMP_CWORD-1]}"
+   # Allowed extensions
+   ALLOW_EXT="inp gro"
+   # List of files
+   ALLOW_ARQ=""
+   for FILE in *; do
+      for EXT in $ALLOW_EXT; do
+         [[ "$FILE" == *.$EXT && "$FILE" = *_mol* ]] && ALLOW_ARQ="$ALLOW_ARQ $FILE"
+      done
+   done
+   # Module options
+   ALLOW_OPT="-df -cp -dt -ps -fm -rs -rd -rd -pd -pd -sm -tm -cv -sh -pl -st -tr -ty -tr -ct -bt -pt -pr -gr -nb"
+   # Module auto-complete
+   if [[ $COMP_CWORD -eq 1 ]]; then                      # 1) First argument → files only
+      COMPREPLY=( $(compgen -W "$ALLOW_ARQ" -- "$cur") ) ; return 0
+   elif [[ "$cur" == -* ]]; then                         # 2) If it starts with "-" → suggest options
+      COMPREPLY=( $(compgen -W "$ALLOW_OPT" -- "$cur") ) ; return 0
+   fi
+}
+
+macro_complete()
+{
+   local cur prev opts files
+   cur="${COMP_WORDS[COMP_CWORD]}"
+   prev="${COMP_WORDS[COMP_CWORD-1]}"
+   # Allowed extensions
+   ALLOW_EXT="pdb"
+   # List of files
+   ALLOW_ARQ=""
+   for FILE in *; do
+      for EXT in $ALLOW_EXT; do
+         [[ "$FILE" == *.$EXT ]] && ALLOW_ARQ="$ALLOW_ARQ $FILE"
+      done
+   done
+   # Module options
+   ALLOW_OPT="-cb -s1 -in -ll -lc -cl -cc -cv -nw -mx -mn -md -is -da -mc -gc -cp -el -ec -vr -s2 -jf -fx -rc -pc -mm -s3 -dt -hf -tp"
+   # Module auto-complete
+   if [[ $COMP_CWORD -eq 1 ]]; then                      # 1) First argument → files only
+      COMPREPLY=( $(compgen -W "$ALLOW_ARQ" -- "$cur") ) ; return 0
+   elif [[ "$cur" == -* ]]; then                         # 2) If it starts with "-" → suggest options
+      COMPREPLY=( $(compgen -W "$ALLOW_OPT" -- "$cur") ) ; return 0
+   fi
+}
+
+micro_complete()
+{
+   local cur prev opts files
+   cur="${COMP_WORDS[COMP_CWORD]}"
+   prev="${COMP_WORDS[COMP_CWORD-1]}"
+   # Allowed extensions
+   ALLOW_EXT="xyz"
+   # List of files
+   ALLOW_ARQ=""
+   for FILE in *; do
+      for EXT in $ALLOW_EXT; do
+         [[ "$FILE" == *.$EXT ]] && ALLOW_ARQ="$ALLOW_ARQ $FILE"
+      done
+   done
+   # Module options
+   ALLOW_OPT="-ce -ms -nc -ns -nl -bc -ct -ch -ml -pr -tp -sv -rt -bk -fm -pc -mm -ct -op -hb -kw -fm -pc -mm"
+   # Module auto-complete
+   if [[ $COMP_CWORD -eq 1 ]]; then                      # 1) First argument → files only
+      COMPREPLY=( $(compgen -W "$ALLOW_ARQ" -- "$cur") ) ; return 0
+   elif [[ "$cur" == -* ]]; then                         # 2) If it starts with "-" → suggest options
+      COMPREPLY=( $(compgen -W "$ALLOW_OPT" -- "$cur") ) ; return 0
+   fi
+}
+
+complete -F packs_complete packs
+complete -F gmdff_complete gmdff
+complete -F mdrun_complete mdrun
+complete -F datas_complete datas
+complete -F macro_complete macro
+complete -F micro_complete micro

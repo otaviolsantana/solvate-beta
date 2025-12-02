@@ -4,49 +4,56 @@
 
 export HOME_SOLVATE=~/.bin/solvate
 export MANPATH=$MANPATH:$HOME_SOLVATE/share/man
-export PATH=$PATH:$HOME_SOLVATE:$HOME_SOLVATE/modules:$HOME_SOLVATE/share:$MANPATH
+export PATH=$PATH:$HOME_SOLVATE:$HOME_SOLVATE/alpha:$HOME_SOLVATE:$HOME_SOLVATE/modules:$HOME_SOLVATE/share:$MANPATH
+
+# SOLVATE + Auto-Complete
+
+source $HOME_SOLVATE/solvate.complete
 
 # SOLVATE + Suite Programs
 
-source $HOME_SOLVATE/suite/orca.profile
 source $HOME_SOLVATE/suite/gsn.profile
+source $HOME_SOLVATE/suite/orca.profile
+source $HOME_SOLVATE/suite/cp2k.profile
 source $HOME_SOLVATE/suite/xtb.profile
+source $HOME_SOLVATE/suite/mopac.profile
 source $HOME_SOLVATE/suite/gmx.profile
 
 #ource $HOME_SOLVATE/suite/boss.profile
-#ource $HOME_SOLVATE/suite/dice.profile
+#ource $HOME_SOLVATE/suite/chimera.profile
 
 source $HOME_SOLVATE/suite/gvw.profile
 source $HOME_SOLVATE/suite/vmd.profile
 
 source $HOME_SOLVATE/suite/packmol.profile
 source $HOME_SOLVATE/suite/qforce.profile
+source $HOME_SOLVATE/suite/travis.profile
 
 source $HOME_SOLVATE/suite/openmpi.profile
 source $HOME_SOLVATE/suite/intel.profile
 
 # Some useful aliases
 
-#--------------------------------# #------------------------------#  #-------------------------------------#
-#lias     g09="rungsn" ;           alias gsn="rungsn" ;              alias gau="rungsn"
-#lias    orca="runorca"
-#lias     xtb="runxtb"
-#lias   crest="runcrest"
-#lias     gmx="rungmx"
-#lias    dice="rundice"
-#--------------------------------# #------------------------------#  #-------------------------------------#
-#lias     gv5="rungvw" ;           alias gvw="rungvw" ;              alias gv="rungvw"
-#lias    jmol="runjmol"
-#lias     vmd="runvmd"
-#--------------------------------# #------------------------------#  #-------------------------------------#
-#lias packmol="runpackmol"
-#lias  qforce="runqforce"
-#lias  cforce="runcforce" ;        alias  ffield="runcforce"
-#--------------------------------# #------------------------------#  #-------------------------------------#
-#lias   babel="runbabel"
-#--------------------------------#
+#------------------------# #------------------------#
+alias     g09="rungsn"    ; alias gsn="rungsn"
+alias    orca="runorca"
+alias     xtb="runxtb"
+alias   crest="runcrest"
+alias     gmx="rungmx"
+alias    dice="rundice"
+#------------------------# #------------------------#
+alias     gv5="rungvw"    ; alias gvw="rungvw"
+alias    jmol="runjmol"
+alias     vmd="runvmd"
+#------------------------# #------------------------#
+alias packmol="runpackmol"
+alias  qforce="runqforce"
+alias  cforce="runcforce" ; alias  ffield="runcforce"
+#------------------------# #------------------------#
+alias   babel="runbabel"
+#------------------------#
 alias      sv="sview"
-#--------------------------------#
+#------------------------#
 alias    info="infos"
 alias sysinfo="infos"
 alias credits="infov"
@@ -59,7 +66,7 @@ alias  update="infou"
 
 ulimit -s unlimited
 
-# Rebuilding a clean PATH
+# Rebuilding a clean PATHs
 
 CLEAN_PATH()
 {
