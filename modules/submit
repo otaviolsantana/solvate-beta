@@ -6,26 +6,30 @@
 # Defining colors
 
 if [[ `echo $@ | grep -i "\-nocol"` ]]; then
-   NCWHT="" ; NCGRY="" ; NCRED="" ; NCGRN="" ; NCYLW="" ; NCBLU="" ; NCPUR="" ; NCOLV="" ; BCWHT="" ; BCGRY="" ; BCRED="" ; BCGRN="" ; BCYLW="" ; BCBLU="" ; BCPUR="" ; BCOLV="" ; FLASH="" ; RESET=""
+   NCBLK=""; NCRED=""; NCGRN=""; NCYLW=""; NCBLU=""; NCPUR=""; NCOLV=""; NCWHT=""; NCGRY=""; NCXYZ=""; BCBLK=""; BCRED=""; BCGRN=""; BCYLW=""; BCBLU=""; BCPUR=""; BCOLV=""; BCWHT=""; BCGRY=""; BCXYZ=""; FLASH=""; RESET=""
 else
-   NCWHT="\e[29m"
-   NCGRY="\e[30m"
-   NCRED="\e[31m"
-   NCGRN="\e[32m"
-   NCYLW="\e[33m"
-   NCBLU="\e[34m"
-   NCPUR="\e[35m"
-   NCOLV="\e[36m"
-   BCWHT="\e[29;1m"
-   BCGRY="\e[30;1m"
-   BCRED="\e[31;1m"
-   BCGRN="\e[32;1m"
-   BCYLW="\e[33;1m"
-   BCBLU="\e[34;1m"
-   BCPUR="\e[35;1m"
-   BCOLV="\e[36;1m"
-   FLASH="\e[31;5m"
-   RESET="\e[0m"
+   NCBLK=$(tput setaf 0)             # NCBLK=""
+   NCRED=$(tput setaf 1)             # NCWHT="\e[29m"
+   NCGRN=$(tput setaf 2)             # NCGRY="\e[30m"
+   NCYLW=$(tput setaf 3)             # NCRED="\e[31m"
+   NCBLU=$(tput setaf 4)             # NCGRN="\e[32m"
+   NCPUR=$(tput setaf 5)             # NCYLW="\e[33m"
+   NCOLV=$(tput setaf 6)             # NCBLU="\e[34m"
+   NCWHT=$(tput setaf 7)             # NCPUR="\e[35m"
+   NCGRY=$(tput setaf 8)             # NCOLV="\e[36m"
+   NCXYZ=$(tput setaf 9)             # ...
+   BCBLK=$(tput setaf 0)$(tput bold) # NCBLK=""
+   BCRED=$(tput setaf 1)$(tput bold) # BCWHT="\e[29;1m"
+   BCGRN=$(tput setaf 2)$(tput bold) # BCGRY="\e[30;1m"
+   BCYLW=$(tput setaf 3)$(tput bold) # BCRED="\e[31;1m"
+   BCBLU=$(tput setaf 4)$(tput bold) # BCGRN="\e[32;1m"
+   BCPUR=$(tput setaf 5)$(tput bold) # BCYLW="\e[33;1m"
+   BCOLV=$(tput setaf 6)$(tput bold) # BCBLU="\e[34;1m"
+   BCWHT=$(tput setaf 7)$(tput bold) # BCPUR="\e[35;1m"
+   BCGRY=$(tput setaf 8)$(tput bold) # BCOLV="\e[36;1m"
+   BCXYZ=$(tput setaf 9)$(tput bold) # ...
+   FLASH=$(tput blink)               # FLASH="\e[31;5m"
+   RESET=$(tput sgr0)                # RESET="\e[0m"
 fi
 
 newargs=()
@@ -72,7 +76,7 @@ elif [[ -z $1 ]]; then
 
    clear
    echo
-   echo -e "${NCBLU} ---------------------------------------------------- ${RESET}"
+   echo -e "${NCGRY} ---------------------------------------------------- ${RESET}"
    echo -e "${BCGRN} submit ⟨program⟩ ⟨input.ext⟩ ⟨-options⟩ ⟨-ntasks I⟩  ${RESET}"
    echo
    echo -e "${BCYLW} PARAMETERS                                           ${RESET}"
@@ -113,7 +117,7 @@ elif [[ -z $1 ]]; then
    echo -e "${NCWHT}      This is an open-source script that may require  ${RESET}"
    echo -e "${NCWHT}      adjustments depending on the available queue    ${RESET}"
    echo -e "${NCWHT}      system                                          ${RESET}"
-   echo -e "${NCBLU} ---------------------------------------------------- ${RESET}"
+   echo -e "${NCGRY} ---------------------------------------------------- ${RESET}"
    echo
 
    infos -compact
