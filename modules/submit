@@ -71,8 +71,8 @@ if [[ `echo $1 | grep -ian "\-ver"` ]]; then
 
 elif [[ -z $1 ]]; then
 
-   FILES1=`ls *.com *.gjf *.inp *.xyz *.gro`
-   FILES2=`ls *.sh`
+   FILES1=$(ls *.com *.gjf *.inp *.xyz *.gro)
+   FILES2=$(ls *.sh)
 
    clear
    echo
@@ -122,14 +122,23 @@ elif [[ -z $1 ]]; then
 
    infos -compact
 
-   if [[ $FILES1 != "" ]]; then
+   if [[ -n $FILES && -n $FILES2 ]]; then
       echo
       echo " Input(s):"
       echo
       echo " » "$FILES1
-   fi
-
-   if [[ $FILES2 != "" ]]; then
+      echo
+      echo " Script(s):"
+      echo
+      echo " » "$FILES2
+      echo
+   elif [[ -n $FILES1 ]]; then
+      echo
+      echo " Input(s):"
+      echo
+      echo " » "$FILES1
+      echo
+   elif [[ -n $FILES2 ]]; then
       echo
       echo " Script(s):"
       echo
