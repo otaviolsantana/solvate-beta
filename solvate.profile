@@ -34,31 +34,32 @@ source $HOME_SOLVATE/suite/intel.profile
 
 # Some useful aliases
 
-#------------------------# #------------------------#
-alias     g09="rungsn"    ; alias gsn="rungsn"
+#-------------------------# #-------------------------#
+alias     gsn="rungsn"     ; alias g09="rungsn"
 alias    orca="runorca"
+alias    cp2k="runcp2k"
 alias     xtb="runxtb"
 alias   crest="runcrest"
+alias   mopac="runmopac"
 alias     gmx="rungmx"
-alias    dice="rundice"
-#------------------------# #------------------------#
-alias     gv5="rungvw"    ; alias gvw="rungvw"
+#-------------------------# #-------------------------#
+alias     gvw="rungvw"     ; alias gv5="rungvw"
 alias    jmol="runjmol"
 alias     vmd="runvmd"
-#------------------------# #------------------------#
-alias packmol="runpackmol"
+alias     svw="sview"      ; alias sv="sview"
+#-------------------------# #-------------------------#
+alias  packml="runpackmol" ; alias packmol="runpackmol"
 alias  qforce="runqforce"
-alias  cforce="runcforce" ; alias  ffield="runcforce"
-#------------------------# #------------------------#
+alias  cforce="runcforce"  ; alias ffield="runcforce"
+alias     lpg="runlpg"     ; alias ligpargen="runlpg"
+#-------------------------# #-------------------------#
 alias   babel="runbabel"
-#------------------------#
-alias      sv="sview"
-#------------------------#
-alias    info="infos"
-alias sysinfo="infos"
+#-------------------------# #-------------------------#
+alias sysinfo="infos"      ; alias info="infos"
 alias credits="infov"
 alias  update="infou"
-#--------------------------------#
+#-------------------------# #-------------------------#
+
 
 # Setting number of threads and stack memory
 
