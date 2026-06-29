@@ -12,7 +12,7 @@ The release version can be found [here](https://github.com/otaviolsantana/solvat
 
 The suite is distributed pre-compiled for Linux systems, being only necessary to download and configure it. To do this, follow the instructions available in the program [home page](https://otaviolsantana.github.io/solvate/installation.html).
 
-	Note: Installing the beta version requires a prior installation of the release version.
+* Note: Installing the beta version requires a prior installation of the release version.
  
 **LICENSE**
 
