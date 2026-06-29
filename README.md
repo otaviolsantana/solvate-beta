@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://user-images.githubusercontent.com/69423088/253824433-a6b55273-b084-4283-a0b6-b8d40bc52890.png" width="250px"/>
+<img width="500" height="525" alt="Image" src="https://github.com/user-attachments/assets/f1c25c35-39f2-4b24-9cc6-c3604cf41765" />
 </div>
 
 # _**Solvate Suite**_
@@ -10,15 +10,9 @@ The release version can be found [here](https://github.com/otaviolsantana/solvat
 
 **INSTALLATION**
 
-The suite is distributed pre-compiled for Linux systems, being only necessary to configure it.
-To do this, download the program with the command:
- 
-	wget https://github.com/otaviolsantana/solvate-beta/archive/refs/heads/main.zip
-	unzip main.zip && mv -f solvate-main solvate
+The suite is distributed pre-compiled for Linux systems, being only necessary to download and configure it. To do this, follow the instructions available in the program [home page](https://otaviolsantana.github.io/solvate/installation.html).
 
-Then, adjust the “profile” and “config” files, and run the “solvate.config” script:
-
-	cd solvate && chmod +x solvate.config && ./solvate.config
+	Note: Installing the beta version requires a prior installation of the release version.
  
 **LICENSE**
 
