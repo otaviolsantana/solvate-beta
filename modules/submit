@@ -155,8 +155,10 @@ fi
 # Determining system configuration
 
 NUMMACS=1 # <<< For a job running on a cluster, modify this !!
-MAXCPUS=`lscpu | grep -ia "CPU(s):" | grep -ia -v list | grep -ia -v numa | head -n1 | awk '{print $2}'`
-MAXPROC=$((NUMMACS*MAXCPUS))
+MAXSOCK=`lscpu | grep -i "Socket(s)"             | grep -i -v list | grep -i -v numa | head -n1 | awk '{print $2}'`
+MAXCORE=`lscpu | grep -i "Core(s) per socket"    | grep -i -v list | grep -i -v numa | head -n1 | awk '{print $4}'`
+MAXTHRD=`lscpu | grep -i "Thread(s) per core"    | grep -i -v list | grep -i -v numa | head -n1 | awk '{print $4}'`
+MAXPROC=`nproc` # MAXPROC=$((NUMMACS*MAXSOCK*MAXCORE*MAXTHRD))
 
 if [[ `free -m | grep -ia "Mem" | head -n1 | awk '{print $2}'` != "" ]]; then
    MAXMEMO=$(echo "`free -m | grep -ia "Mem" | head -n1 | awk '{print $2}'` / 1000" | bc)
